@@ -445,10 +445,10 @@ int32_t      TR_ResolvedMethod::classCPIndexOfFieldOrStatic(int32_t)       { not
 const char * TR_ResolvedMethod::signature(TR_Memory *, TR_AllocationKind)  { notImplemented("signature"); return 0; }
 const char * TR_ResolvedMethod::externalName(TR_Memory *, TR_AllocationKind)  { notImplemented("signature"); return 0; }
 char *       TR_ResolvedMethod::fieldName (int32_t, TR_Memory *, TR_AllocationKind kind)           { notImplemented("fieldName"); return 0; }
-char *       TR_ResolvedMethod::staticName(int32_t, TR_Memory *, TR_AllocationKind kind)           { notImplemented("staticName"); return 0; }
+char *       TR_ResolvedMethod::staticFieldName(int32_t, TR_Memory *, TR_AllocationKind kind)           { notImplemented("staticFieldName"); return 0; }
 char *       TR_ResolvedMethod::localName (uint32_t, uint32_t, TR_Memory *){ /*notImplemented("localName");*/ return 0; }
 char *       TR_ResolvedMethod::fieldName (int32_t, int32_t &, TR_Memory *, TR_AllocationKind kind){ notImplemented("fieldName"); return 0; }
-char *       TR_ResolvedMethod::staticName(int32_t, int32_t &, TR_Memory *, TR_AllocationKind kind){ notImplemented("staticName"); return 0; }
+char *       TR_ResolvedMethod::staticFieldName(int32_t, int32_t &, TR_Memory *, TR_AllocationKind kind){ notImplemented("staticFieldName"); return 0; }
 char *       TR_ResolvedMethod::localName (uint32_t, uint32_t, int32_t&, TR_Memory *){ /*notImplemented("localName");*/ return 0; }
 char *       TR_ResolvedMethod::fieldNameChars(int32_t, int32_t &)         { notImplemented("fieldNameChars"); return 0; }
 char *       TR_ResolvedMethod::fieldSignatureChars(int32_t, int32_t &)    { notImplemented("fieldSignatureChars"); return 0; }
@@ -468,7 +468,7 @@ bool         TR_ResolvedMethod::fieldsAreSame(int32_t, TR_ResolvedMethod *, int3
 bool         TR_ResolvedMethod::staticsAreSame(int32_t, TR_ResolvedMethod *, int32_t, bool &sigSame)   { notImplemented("staticsAreSame"); return false; }
 char *       TR_ResolvedMethod::classNameOfFieldOrStatic(int32_t, int32_t &)            { notImplemented("classNameOfFieldOrStatic"); return 0; }
 char *       TR_ResolvedMethod::classSignatureOfFieldOrStatic(int32_t, int32_t &)       { notImplemented("classSignatureOfFieldOrStatic"); return 0; }
-char *       TR_ResolvedMethod::staticNameChars(int32_t, int32_t &)                     { notImplemented("staticNameChars"); return 0; }
+char *       TR_ResolvedMethod::staticFieldNameChars(int32_t, int32_t &)                     { notImplemented("staticFieldNameChars"); return 0; }
 const char * TR_ResolvedMethod::newInstancePrototypeSignature(TR_Memory *, TR_AllocationKind)        { notImplemented("newInstancePrototypeSignature"); return 0; }
 
 bool

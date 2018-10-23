@@ -7925,14 +7925,14 @@ void OMR::ValuePropagation::doDelayedTransformations()
       if ((origFirst->getOpCodeValue() == TR::aload) &&
           origFirst->getSymbol()->isStaticField())
          {
-         int32_t staticNameLen = -1;
-         char *staticName = NULL;
-         staticName = origFirst->getSymbolReference()->getOwningMethod(comp())->staticName(origFirst->getSymbolReference()->getCPIndex(), staticNameLen, comp()->trMemory());
+         int32_t staticFieldNameLen = -1;
+         char *staticFieldName = NULL;
+         staticFieldName = origFirst->getSymbolReference()->getOwningMethod(comp())->staticFieldName(origFirst->getSymbolReference()->getCPIndex(), staticFieldNameLen, comp()->trMemory());
 
-         if ((staticName && (staticNameLen > 0) &&
-             (!strncmp(staticName, "com/ibm/websphere/ras/TraceComponent.fineTracingEnabled", 55) ||
-              !strncmp(staticName, "com/ibm/ejs/ras/TraceComponent.anyTracingEnabled", 48) ||
-              !strncmp(staticName, "java/lang/String.compressionFlag", 32))) ||
+         if ((staticFieldName && (staticFieldNameLen > 0) &&
+             (!strncmp(staticFieldName, "com/ibm/websphere/ras/TraceComponent.fineTracingEnabled", 55) ||
+              !strncmp(staticFieldName, "com/ibm/ejs/ras/TraceComponent.anyTracingEnabled", 48) ||
+              !strncmp(staticFieldName, "java/lang/String.compressionFlag", 32))) ||
              ((cii->_len == 41) && !strncmp(cii->_sig, "Lcom/ibm/websphere/ras/TraceEnabledToken;", cii->_len)) ||
              ((cii->_len == 35) && !strncmp(cii->_sig, "Lcom/ibm/ejs/ras/TraceEnabledToken;", cii->_len)) ||
              ((cii->_len == 40) && !strncmp(cii->_sig, "Ljava/lang/String$StringCompressionFlag;", cii->_len)))

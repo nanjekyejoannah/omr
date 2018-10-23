@@ -186,14 +186,14 @@ public:
 
    // These functions actually return a complete description of the field/static
    virtual char *fieldName (int32_t cpIndex, TR_Memory *, TR_AllocationKind kind=heapAlloc);
-   virtual char *staticName(int32_t cpIndex, TR_Memory *, TR_AllocationKind kind=heapAlloc);
+   virtual char *staticFieldName(int32_t cpIndex, TR_Memory *, TR_AllocationKind kind=heapAlloc);
    virtual char *localName (uint32_t slotNumber, uint32_t bcIndex, TR_Memory *);
    virtual char *fieldName (int32_t cpIndex, int32_t & len, TR_Memory *, TR_AllocationKind kind=heapAlloc);
-   virtual char *staticName(int32_t cpIndex, int32_t & len, TR_Memory *, TR_AllocationKind kind=heapAlloc);
+   virtual char *staticFieldName(int32_t cpIndex, int32_t & len, TR_Memory *, TR_AllocationKind kind=heapAlloc);
    virtual char *localName (uint32_t slotNumber, uint32_t bcIndex, int32_t &len, TR_Memory *);
 
    virtual char *fieldNameChars(int32_t cpIndex, int32_t & len);
-   virtual char *staticNameChars(int32_t cpIndex, int32_t & len);
+   virtual char *staticFieldNameChars(int32_t cpIndex, int32_t & len);
    virtual char *fieldSignatureChars(int32_t cpIndex, int32_t & len);
    virtual char *staticSignatureChars(int32_t cpIndex, int32_t & len);
 

@@ -714,8 +714,8 @@ public:
 
    const char * getAutoName(TR::SymbolReference *);
    const char * getParmName(TR::SymbolReference *);
-   const char * getStaticName(TR::SymbolReference *);
-   const char * getStaticName_ForListing(TR::SymbolReference *);
+   const char * getStaticFieldName(TR::SymbolReference *);
+   const char * getStaticFieldName_ForListing(TR::SymbolReference *);
 
    virtual const char * getMethodName(TR::SymbolReference *);
 

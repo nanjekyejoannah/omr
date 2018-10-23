@@ -1666,7 +1666,7 @@ TR_Debug::getName(TR::SymbolReference * symRef)
       case TR::Symbol::IsParameter:
          return getParmName(symRef);
       case TR::Symbol::IsStatic:
-         return getStaticName(symRef);
+         return getStaticFieldName(symRef);
       case TR::Symbol::IsResolvedMethod:
       case TR::Symbol::IsMethod:
          return getMethodName(symRef);
@@ -1873,7 +1873,7 @@ TR_Debug::getMethodName(TR::SymbolReference * symRef)
 
 
 const char *
-TR_Debug::getStaticName_ForListing(TR::SymbolReference * symRef)
+TR_Debug::getStaticFieldName_ForListing(TR::SymbolReference * symRef)
    {
    TR::StaticSymbol * sym = symRef->getSymbol()->castToStaticSymbol();
 
@@ -1888,7 +1888,7 @@ TR_Debug::getStaticName_ForListing(TR::SymbolReference * symRef)
 
 
 const char *
-TR_Debug::getStaticName(TR::SymbolReference * symRef)
+TR_Debug::getStaticFieldName(TR::SymbolReference * symRef)
    {
    TR::StaticSymbol * sym = symRef->getSymbol()->castToStaticSymbol();
    void * staticAddress;
@@ -1924,9 +1924,9 @@ TR_Debug::getStaticName(TR::SymbolReference * symRef)
          const intptrj_t PIECE_LIMIT=20;
 
 #ifdef J9_PROJECT_SPECIFIC
-         TR::VMAccessCriticalSection getStaticNameCriticalSection(comp(),
+         TR::VMAccessCriticalSection getStaticFieldNameCriticalSection(comp(),
                                                                    TR::VMAccessCriticalSection::tryToAcquireVMAccess);
-         if (!symRef->isUnresolved() && getStaticNameCriticalSection.acquiredVMAccess())
+         if (!symRef->isUnresolved() && getStaticFieldNameCriticalSection.acquiredVMAccess())
             {
             uintptrj_t stringLocation = (uintptrj_t)sym->castToStaticSymbol()->getStaticAddress();
             if (stringLocation)
@@ -1992,7 +1992,7 @@ TR_Debug::getStaticName(TR::SymbolReference * symRef)
       if (sym->isConst())
          return "<constant>";
 
-      return getOwningMethod(symRef)->staticName(symRef->getCPIndex(), comp()->trMemory());
+      return getOwningMethod(symRef)->staticFieldName(symRef->getCPIndex(), comp()->trMemory());
       }
 
    if (_comp->getSymRefTab()->isVtableEntrySymbolRef(symRef))

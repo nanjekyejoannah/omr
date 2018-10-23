@@ -2623,7 +2623,7 @@ TR::Node *constrainIaload(OMR::ValuePropagation *vp, TR::Node *node)
                         if (underlyingArray->getSymbolReference()->getSymbol()->isShadow())
                            fieldName = underlyingArray->getSymbolReference()->getOwningMethod(vp->comp())->fieldName(underlyingArray->getSymbolReference()->getCPIndex(), fieldNameLen, vp->comp()->trMemory());
                         else
-                           fieldName = underlyingArray->getSymbolReference()->getOwningMethod(vp->comp())->staticName(underlyingArray->getSymbolReference()->getCPIndex(), fieldNameLen, vp->comp()->trMemory());
+                           fieldName = underlyingArray->getSymbolReference()->getOwningMethod(vp->comp())->staticFieldName(underlyingArray->getSymbolReference()->getCPIndex(), fieldNameLen, vp->comp()->trMemory());
                         }
 
                      if (fieldName && (fieldNameLen > 0) &&
