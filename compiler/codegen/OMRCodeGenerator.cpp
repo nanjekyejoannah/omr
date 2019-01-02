@@ -244,7 +244,6 @@ OMR::CodeGenerator::CodeGenerator() :
      _accumulatorNodeUsage(0),
      _nodesUnderComputeCCList(getTypedAllocator<TR::Node*>(TR::comp()->allocator())),
      _nodesToUncommonList(getTypedAllocator<TR::Node*>(TR::comp()->allocator())),
-     _nodesSpineCheckedList(getTypedAllocator<TR::Node*>(TR::comp()->allocator())),
      _collectedSpillList(getTypedAllocator<TR_BackingStore*>(TR::comp()->allocator())),
      _allSpillList(getTypedAllocator<TR_BackingStore*>(TR::comp()->allocator())),
      _relocationList(getTypedAllocator<TR::Relocation*>(TR::comp()->allocator())),
