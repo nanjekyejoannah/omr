@@ -1901,9 +1901,6 @@ class OMR_EXTENSIBLE CodeGenerator
 
    bool _afterRA;
 
-   // MOVE TO J9 Z CodeGenerator
-   // isTemporaryBased storageReferences just have a symRef but some other routines expect a node so use the below to fill in this symRef on this node
-   TR::Node *_dummyTempStorageRefNode;
 
    public:
    static TR_TreeEvaluatorFunctionPointer _nodeToInstrEvaluators[];
