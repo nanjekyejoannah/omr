@@ -1898,7 +1898,7 @@ TEST(PortFileStreamTest, omrfilestream_test_text)
 	/*
 	 * This string is the sequence U+0024, U+00A2, U+20AC followed by newlines.
 	 * They are 1 byte, 2 byte, and 3 byte characters, respectively.
-	 * "$\n¢\n€\n"
+	 * "$\n¢\n*\n"
 	 */
 
 	/* modified utf-8 */
